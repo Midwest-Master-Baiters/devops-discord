@@ -140,9 +140,9 @@ resource "discord_voice_channel" "community_lounge" {
 }
 
 resource "discord_voice_channel" "community_afk" {
-  name     = "Go Away I'm Baitin'!"
+  name = "Go Away I'm Baitin'!"
   position = length(discord_voice_channel.community_lounge) + max([
-    for c in discord_voice_channel.community_lounge :c.position
+    for c in discord_voice_channel.community_lounge : c.position
   ]...)
 
   server_id  = discord_server.production.id

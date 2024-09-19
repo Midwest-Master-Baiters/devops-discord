@@ -9,5 +9,5 @@ resource "discord_server" "production" {
   #  owner_id                      = ""
   #  region                        = ""
   #  splash_data_uri               = "https://raw.githubusercontent.com/Midwest-Master-Baiters/devops-discord/master/static/splash.jpg"
-  verification_level            = 1
+  verification_level = 1
 }
