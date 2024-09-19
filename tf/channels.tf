@@ -38,6 +38,17 @@ resource "discord_news_channel" "information_announcements" {
   lifecycle { ignore_changes = [topic] }
 }
 
+resource "discord_text_channel" "information_creators" {
+  name     = "content-creators"
+  position = 2
+
+  server_id  = discord_server.production.id
+  category   = discord_category_channel.information.id
+  depends_on = [discord_server.production, discord_category_channel.information]
+  lifecycle { ignore_changes = [topic] }
+}
+
+
 ########################################################################################################################
 # Angling Section
 ########################################################################################################################
