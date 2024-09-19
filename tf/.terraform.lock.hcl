@@ -1,18 +1,18 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
-provider "registry.terraform.io/lucky3028/discord" {
-  version     = "1.8.1"
-  constraints = "1.8.1"
+provider "registry.terraform.io/midwest-master-baiters/discord" {
+  version     = "2.0.0"
+  constraints = "2.0.0"
   hashes = [
-    "h1:1kPZeV58x8JvjrUjMeWhkM/kPgsh3/EZzCzRfq0wvVE=",
-    "zh:2ae1ab12d0e1f09ce466f6db8bc28f0aae4b08e388b06df350a65c840177c2ae",
-    "zh:3913b83840173866fa5581783abf57e767c148d4b76517d659975747d4d12e9a",
-    "zh:5dff278aade07ba151a66bf6b0ede4829eb22b6478daba5fbb1ef6516b4266fa",
-    "zh:8b82a1905735241bd21f7879c0e3397b6466914bdfba00a81d03176e0ba50763",
-    "zh:a81d2006110568c7a9f34280f497674e4ae3de43d3337e2e9a175f3136fec412",
-    "zh:b3a3dd576f43502023448b342c31d7af5681149860b2d27ea9216dbfebac5e8b",
-    "zh:d2e27785fc5775d0b4ed46a3bcca2b6f90a9cde747055a1756ebaad84bc2b322",
-    "zh:df3e533a7cd6e76a23420f6cefd2fac7c8d3c452a697403d3d85de8b4fbf9212",
+    "h1:2L8G7uGXNQgHh8S1AH3f0ZbeE1WODalTMAuB0fNQjVo=",
+    "zh:415e7c19ccfd833df230ad174723466838403292c33fbabef067a029ee0684d0",
+    "zh:4c5162ea47700b6dd3dc57523e3a161901abea723ad7fb15becdb1f6185b2898",
+    "zh:57ec1965b21258c8d4915096d3af740cfaf29ff214635352fc2294058d04dd8e",
+    "zh:5ca75b77c5566419db708b2b7460dcd097c297712dec622fa34a1b12c7a94d95",
+    "zh:67be41cd310c3493dcc2f77fc201fb860b771c7d6f93562470c05e217b096c33",
+    "zh:bbdcc4688faf1bd1a0476d9f7f2e14741e88b5a8c46ad0274e9fd3515c4c926f",
+    "zh:c5df4dc6cc619ed18b20ac4638c76631da9af520309d7dade07de3282bbb3ba0",
+    "zh:df9a680c991523d3fd76cd61530dc4075b975bdd843508b2d8a8310f9eb2eaa4",
   ]
 }

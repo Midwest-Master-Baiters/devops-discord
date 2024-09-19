@@ -1,2 +1,3 @@
 # Project Files
 .idea/
+tf/terraform.tfvars

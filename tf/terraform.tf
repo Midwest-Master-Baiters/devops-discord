@@ -1,0 +1,8 @@
+terraform {
+  required_providers {
+    discord = {
+      source = "Midwest-Master-Baiters/discord"
+      version = "2.0.0"
+    }
+  }
+}
