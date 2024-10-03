@@ -11,9 +11,8 @@ resource "discord_system_channel" "production_system" {
 # Information Section
 ########################################################################################################################
 resource "discord_category_channel" "information" {
-  name     = "Information"
-  position = 0
-
+  name       = "Information"
+  position   = 0
   server_id  = discord_server.production.id
   depends_on = [discord_server.production]
 }
@@ -53,7 +52,7 @@ resource "discord_text_channel" "information_creators" {
 # Angling Section
 ########################################################################################################################
 resource "discord_category_channel" "angling" {
-  name     = "Angling 🎣"
+  name     = "Angling Help and Tutorials 🎣"
   position = 1
 
   server_id  = discord_server.production.id
@@ -101,9 +100,22 @@ resource "discord_category_channel" "community" {
   depends_on = [discord_server.production, discord_category_channel.angling]
 }
 
+resource "discord_text_channel" "community_general" {
+  name     = "general"
+  position = 0
+  nsfw     = false
+
+  server_id  = discord_server.production.id
+  category   = discord_category_channel.community.id
+  depends_on = [discord_server.production, discord_category_channel.community]
+  lifecycle { ignore_changes = [topic] }
+}
+
 resource "discord_text_channel" "community_gear_chat" {
-  name       = "gear-chat"
-  position   = 0
+  name     = "gear-chat"
+  position = 1
+  nsfw     = false
+
   server_id  = discord_server.production.id
   category   = discord_category_channel.community.id
   depends_on = [discord_server.production, discord_category_channel.community]
@@ -112,7 +124,7 @@ resource "discord_text_channel" "community_gear_chat" {
 
 resource "discord_text_channel" "community_member_catches" {
   name     = "member-catches"
-  position = 1
+  position = 2
   nsfw     = false
 
   server_id  = discord_server.production.id
@@ -123,7 +135,8 @@ resource "discord_text_channel" "community_member_catches" {
 
 resource "discord_text_channel" "community_off_topic" {
   name     = "off-topic"
-  position = 2
+  position = 3
+  nsfw     = false
 
   server_id  = discord_server.production.id
   category   = discord_category_channel.community.id
@@ -134,7 +147,7 @@ resource "discord_text_channel" "community_off_topic" {
 resource "discord_stage_channel" "community_stage" {
   count    = 1
   name     = "Stage ${count.index + 1}"
-  position = 3 + count.index
+  position = 4 + count.index
 
   server_id  = discord_server.production.id
   category   = discord_category_channel.community.id
