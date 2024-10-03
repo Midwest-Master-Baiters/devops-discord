@@ -110,7 +110,7 @@ jobs:
 
       - name: Y THO
         working-directory: "./tf"
-        run: ls -lah && ls -lah .tf/
+        run: ls -lah && ls -lah ../
 
 
 #      - name: Terraform Apply
