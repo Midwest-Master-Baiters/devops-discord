@@ -113,6 +113,7 @@ resource "discord_text_channel" "community_gear_chat" {
 resource "discord_text_channel" "community_member_catches" {
   name     = "member-catches"
   position = 1
+  nsfw = false
 
   server_id  = discord_server.production.id
   category   = discord_category_channel.community.id
