@@ -1,3 +1,6 @@
+########################################################################################################################
+# Category
+########################################################################################################################
 resource "discord_category_channel" "angling" {
   name     = "Angling Help and Tutorials 🎣"
   position = 1
@@ -6,6 +9,10 @@ resource "discord_category_channel" "angling" {
   depends_on = [discord_server.production, discord_category_channel.information]
 }
 
+
+########################################################################################################################
+# Channels
+########################################################################################################################
 resource "discord_forum_channel" "angling_rods_n_reels" {
   name     = "rods-n-reels"
   position = 0
@@ -35,3 +42,8 @@ resource "discord_forum_channel" "angling_technique" {
   depends_on = [discord_server.production, discord_category_channel.angling]
   lifecycle { ignore_changes = [topic] }
 }
+
+
+########################################################################################################################
+# Permissions
+########################################################################################################################

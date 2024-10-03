@@ -1,5 +1,5 @@
 ########################################################################################################################
-# Information Section
+# Category
 ########################################################################################################################
 resource "discord_category_channel" "information" {
   name       = "Information"
@@ -8,6 +8,10 @@ resource "discord_category_channel" "information" {
   depends_on = [discord_server.production]
 }
 
+
+########################################################################################################################
+# Channels
+########################################################################################################################
 resource "discord_text_channel" "information_welcome" {
   name     = "welcome-and-rules"
   position = 0
@@ -37,3 +41,8 @@ resource "discord_text_channel" "information_creators" {
   depends_on = [discord_server.production, discord_category_channel.information]
   lifecycle { ignore_changes = [topic] }
 }
+
+
+########################################################################################################################
+# Permissions
+########################################################################################################################

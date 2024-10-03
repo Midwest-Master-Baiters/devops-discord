@@ -1,3 +1,6 @@
+########################################################################################################################
+# Category
+########################################################################################################################
 resource "discord_category_channel" "community" {
   name       = "Community 💬"
   position   = 2
@@ -5,6 +8,10 @@ resource "discord_category_channel" "community" {
   depends_on = [discord_server.production, discord_category_channel.angling]
 }
 
+
+########################################################################################################################
+# Channels
+########################################################################################################################
 resource "discord_text_channel" "community_general" {
   name     = "general"
   position = 0
@@ -79,3 +86,8 @@ resource "discord_voice_channel" "community_afk" {
   category   = discord_category_channel.community.id
   depends_on = [discord_server.production, discord_category_channel.community, discord_voice_channel.community_lounge]
 }
+
+
+########################################################################################################################
+# Permissions
+########################################################################################################################

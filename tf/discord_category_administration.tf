@@ -1,3 +1,6 @@
+########################################################################################################################
+# Category
+########################################################################################################################
 resource "discord_category_channel" "administration" {
   name     = "Administration ⛔"
   position = 6
@@ -6,6 +9,10 @@ resource "discord_category_channel" "administration" {
   depends_on = [discord_server.production, discord_category_channel.live_fishing]
 }
 
+
+########################################################################################################################
+# Channels
+########################################################################################################################
 resource "discord_text_channel" "administration_branding" {
   name     = "branding"
   position = 1
@@ -50,3 +57,8 @@ resource "discord_voice_channel" "administration_bants" {
   category   = discord_category_channel.administration.id
   depends_on = [discord_server.production, discord_category_channel.administration]
 }
+
+
+########################################################################################################################
+# Permissions
+########################################################################################################################

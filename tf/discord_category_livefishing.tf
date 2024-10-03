@@ -1,3 +1,6 @@
+########################################################################################################################
+# Category
+########################################################################################################################
 resource "discord_category_channel" "live_fishing" {
   name     = "Live Fishin' 📺"
   position = 3
@@ -6,6 +9,10 @@ resource "discord_category_channel" "live_fishing" {
   depends_on = [discord_server.production, discord_category_channel.community]
 }
 
+
+########################################################################################################################
+# Channels
+########################################################################################################################
 resource "discord_text_channel" "live_fishing_shore_text" {
   count    = 2
   name     = "shore-${count.index + 1}"
@@ -25,3 +32,8 @@ resource "discord_voice_channel" "live_fishing_shore_voice" {
   category   = discord_category_channel.live_fishing.id
   depends_on = [discord_server.production, discord_category_channel.live_fishing]
 }
+
+
+########################################################################################################################
+# Permissions
+########################################################################################################################
