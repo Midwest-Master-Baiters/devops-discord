@@ -107,8 +107,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: plan.out
-          path: ./tf/plan.out
 
-      - name: Terraform Apply
+      - name: Y THO
         working-directory: "./tf"
-        run: terraform apply -auto-approve -input=false -lock=true plan.out
+        run: ls -lah && ls -lah .tf/
+
+
+#      - name: Terraform Apply
+#        working-directory: "./tf"
+#        run: terraform apply -auto-approve -input=false -lock=true plan.out
