@@ -39,3 +39,6 @@ terraform.rc
 
 # Ignore test variables
 terraform.tfvars
+
+# Ignore Plan
+plan.out
