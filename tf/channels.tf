@@ -244,9 +244,20 @@ resource "discord_text_channel" "administration_void" {
   depends_on = [discord_server.production, discord_category_channel.administration]
 }
 
+
+resource "discord_text_channel" "administration_github" {
+  name     = "github"
+  position = 4
+
+  server_id  = discord_server.production.id
+  category   = discord_category_channel.administration.id
+  depends_on = [discord_server.production, discord_category_channel.administration]
+}
+
+
 resource "discord_voice_channel" "administration_bants" {
   name     = "Banter"
-  position = 4
+  position = 5
 
   server_id  = discord_server.production.id
   category   = discord_category_channel.administration.id
