@@ -22,19 +22,19 @@ jobs:
         shell: bash
 
     steps:
-      - name: Checkout
+      - name: Checkout Code.
         uses: actions/checkout@v4
 
-      - name: Setup Terraform
+      - name: Setup Terraform.
         uses: hashicorp/setup-terraform@v1
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-      - name: Terraform Init
+      - name: Terraform Init.
         working-directory: "./tf"
         run: terraform init
 
-      - name: Terraform Format
+      - name: Terraform Format.
         working-directory: "./tf"
         run: terraform fmt -check --diff --recursive
 
@@ -50,32 +50,33 @@ jobs:
         shell: bash
 
     steps:
-      - name: Checkout
+      - name: Checkout Code.
         uses: actions/checkout@v4
 
-      - name: Setup Terraform
+      - name: Setup Terraform.
         uses: hashicorp/setup-terraform@v1
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-      - name: Terraform Init
+      - name: Terraform Init.
         working-directory: "./tf"
         run: terraform init
 
-      - name: Terraform Plan
+      - name: Terraform Plan.
         working-directory: "./tf"
         run: terraform plan -input=false -lock=true -out=plan.out
 
-      - name: Show Plan
+      - name: Show Plan.
         working-directory: "./tf"
         run: terraform show plan.out
 
-      - name: Archive plan
+      - name: Archive plan.
         uses: actions/upload-artifact@v4
         with:
           name: plan.out
           path: ./tf/plan.out
           retention-days: 7
+
 
   deploy:
     name: 'Deploy'
@@ -89,18 +90,24 @@ jobs:
         shell: bash
 
     steps:
-      - name: Checkout
+      - name: Checkout Code.
         uses: actions/checkout@v4
 
-      - name: Setup Terraform
+      - name: Acquire Plan.
+        uses: actions/download-artifact@v4
+        with:
+          name: plan.out
+          path: ./tf
+
+      - name: Setup Terraform.
         uses: hashicorp/setup-terraform@v1
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-      - name: Terraform Init
+      - name: Terraform Init.
         working-directory: "./tf"
         run: terraform init
 
-      - name: Terraform Apply
+      - name: Terraform Apply.
         working-directory: "./tf"
-        run: terraform apply -auto-approve -input=false -lock=true
+        run: terraform apply -auto-approve -input=false -lock=true ./plan.out
