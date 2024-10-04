@@ -2,22 +2,20 @@
 # Everyone
 ########################################################################################################################
 data "discord_permission" "everyone" {
-  read_message_history  = "allow"
-  view_channel          = "allow"
-  add_reactions         = "allow"
-  attach_files          = "allow"
-  create_public_threads = "allow"
-  embed_links           = "allow"
-
-  send_messages            = "allow"
-  send_thread_messages     = "allow"
-  send_voice_messages      = "allow"
-  use_application_commands = "allow"
-  use_external_apps        = "allow"
-  use_external_emojis      = "allow"
-  use_external_stickers    = "allow"
-  use_external_sounds      = "allow"
-
+  read_message_history      = "allow"
+  view_channel              = "allow"
+  add_reactions             = "allow"
+  attach_files              = "allow"
+  create_public_threads     = "allow"
+  embed_links               = "allow"
+  send_messages             = "allow"
+  send_thread_messages      = "allow"
+  send_voice_messages       = "allow"
+  use_application_commands  = "allow"
+  use_external_apps         = "allow"
+  use_external_emojis       = "allow"
+  use_external_stickers     = "allow"
+  use_external_sounds       = "allow"
   connect                   = "allow"
   speak                     = "allow"
   stream                    = "allow"
@@ -49,7 +47,7 @@ resource "discord_role" "administrators" {
 
   hoist       = true
   mentionable = false
-  position    = 1
+  position    = 2
 
   permissions = data.discord_permission.administrators.allow_bits
   server_id   = discord_server.production.id
@@ -60,13 +58,23 @@ resource "discord_role" "administrators" {
 # Hang Danglers
 ########################################################################################################################
 data "discord_permission" "moderators" {
-  view_channel     = "allow"
-  mention_everyone = "allow"
-  manage_messages  = "allow"
-  manage_threads   = "allow"
-  kick_members     = "allow"
-  mute_members     = "allow"
-  ban_members      = "allow"
+  kick_members         = "allow"
+  ban_members          = "allow"
+  change_nickname      = "allow"
+  create_events        = "allow"
+  manage_events        = "allow"
+  manage_nicknames     = "allow"
+  manage_roles         = "allow"
+  moderate_members     = "allow"
+  view_audit_log       = "allow"
+  manage_messages      = "allow"
+  manage_threads       = "allow"
+  mention_everyone     = "allow"
+  read_message_history = "allow"
+  send_polls           = "allow"
+  move_members         = "allow"
+  mute_members         = "allow"
+  deafen_members       = "allow"
 }
 
 data "discord_color" "moderators" {
@@ -79,7 +87,7 @@ resource "discord_role" "moderators" {
 
   hoist       = true
   mentionable = false
-  position    = 2
+  position    = 1
 
   permissions = data.discord_permission.moderators.allow_bits
   server_id   = discord_server.production.id
