@@ -2,17 +2,17 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/midwest-master-baiters/discord" {
-  version     = "2.0.0"
-  constraints = "2.0.0"
+  version     = "2.1.0"
+  constraints = "2.1.0"
   hashes = [
-    "h1:2L8G7uGXNQgHh8S1AH3f0ZbeE1WODalTMAuB0fNQjVo=",
-    "zh:415e7c19ccfd833df230ad174723466838403292c33fbabef067a029ee0684d0",
-    "zh:4c5162ea47700b6dd3dc57523e3a161901abea723ad7fb15becdb1f6185b2898",
-    "zh:57ec1965b21258c8d4915096d3af740cfaf29ff214635352fc2294058d04dd8e",
-    "zh:5ca75b77c5566419db708b2b7460dcd097c297712dec622fa34a1b12c7a94d95",
-    "zh:67be41cd310c3493dcc2f77fc201fb860b771c7d6f93562470c05e217b096c33",
-    "zh:bbdcc4688faf1bd1a0476d9f7f2e14741e88b5a8c46ad0274e9fd3515c4c926f",
-    "zh:c5df4dc6cc619ed18b20ac4638c76631da9af520309d7dade07de3282bbb3ba0",
-    "zh:df9a680c991523d3fd76cd61530dc4075b975bdd843508b2d8a8310f9eb2eaa4",
+    "h1:EQKlmo98Kx94DVgEqJPlI0BEZQFyLLrV7Oq6ZXbnXOk=",
+    "zh:127468cc8b120cad83e74f64ce469222dfa23a62966dd5251cf94089ebeedc56",
+    "zh:1d2bdfe332b48ab67ead582e6e027ab9feae41f68b5db3bbac52bdf22f2e5945",
+    "zh:2b2a4e7ea33e95ec9271387ed23a4678f24731bcb8cfcef73525421aba0156dd",
+    "zh:775699c1e88bada36b12313eb83913743c9eed3cf1d57ce38ca0fe1d93f1f670",
+    "zh:9569f453dcb1882df65dd9bd4297c64006358ee99dae2e8883abaa204431444f",
+    "zh:bcde6152b12fd63de8929ecbdcaa5471d3200e1b5d6cc91f90e91394991996d2",
+    "zh:be5a3fedafca231ff4dcd9575eb7566988c4a3b6ffe5b8c1545e092972967062",
+    "zh:ed92d6a4d68fef5f45305b23565b150321a21f06faf0d6f17b930495c376cee6",
   ]
 }
