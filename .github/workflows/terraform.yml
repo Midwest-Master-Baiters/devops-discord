@@ -64,11 +64,7 @@ jobs:
 
       - name: Terraform Plan.
         working-directory: "./tf"
-        run: terraform plan -input=false -lock=true -out=plan.out
-
-      - name: Show Plan.
-        working-directory: "./tf"
-        run: terraform show plan.out
+        run: terraform plan -input=false
 
       - name: Archive plan.
         uses: actions/upload-artifact@v4
@@ -93,12 +89,6 @@ jobs:
       - name: Checkout Code.
         uses: actions/checkout@v4
 
-      - name: Acquire Plan.
-        uses: actions/download-artifact@v4
-        with:
-          name: plan.out
-          path: ./tf
-
       - name: Setup Terraform.
         uses: hashicorp/setup-terraform@v1
         with:
@@ -110,4 +100,4 @@ jobs:
 
       - name: Terraform Apply.
         working-directory: "./tf"
-        run: terraform apply -auto-approve -input=false -lock=true ./plan.out
+        run: terraform apply -auto-approve -input=false -lock=true
